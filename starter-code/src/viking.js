@@ -60,11 +60,29 @@ addSaxon(Saxon) {
     this.saxonArmy.push(Saxon);
 }
 vikingAttack() {
-    Saxon.receiveDamage(damage = Viking.stregnth);
+    this.saxonArmy.receiveDamage(damage = Viking.stregnth);
     if (this.health < 0) {
         this.saxonArmy.splice(Saxon);
     }
 return `Saxon recieved ${this.damage} from a Viking` 
+}
+saxonAttack() {
+    this.vikingArmy.receiveDamage(damage = Saxon.stregnth);
+    if (this.health < 0) {
+        this.vikingArmy.splice(Viking);
+    }
+return `Viking recieved ${this.damage} from a Saxon` 
+}
+showStatus() {
+    if (this.saxonArmy.length < 0) {
+        return "Vikings have won the war of the century!"
+    }
+    else if (this.vikingArmy.length < 0) {
+        return "Saxons have fought for their lives and survive another day..."
+    }
+    else (this.vikingArmy.length && this.saxonArmy.length > 0) 
+        return "Vikings and Saxons are still in the thick of battle."
+    
 }
 
 }
